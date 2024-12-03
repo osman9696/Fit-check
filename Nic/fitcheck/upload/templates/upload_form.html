@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fitcheck - Upload Images</title>
+</head>
+<body>
+    <h1>Upload Images</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="garment_img">Garment Image:</label>
+        <input type="file" name="garment_img" required><br>
+        <label for="human_img">Human Image:</label>
+        <input type="file" name="human_img" required><br>
+        <label for="description">Garment Description:</label>
+        <input type="text" name="description" placeholder="e.g., cute pink top" required><br>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
